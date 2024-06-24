@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data> <variable name="album" type="com.example.recordshop.model.Album" /></data>
+    <androidx.constraintlayout.widget.ConstraintLayout 
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/albumTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Album Title"
+        android:text="@{album.name}"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        />
+
+        <TextView
+            android:id="@+id/albumArtistTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artist: "
+            app:layout_constraintTop_toBottomOf="@id/albumTitle"
+            app:layout_constraintStart_toEndOf="@id/albumPic"
+            android:textSize="11sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:id="@+id/albumArtist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Artist"
+            android:text="@{album.artist}"
+            app:layout_constraintTop_toBottomOf="@id/albumTitle"
+            app:layout_constraintStart_toEndOf="@id/albumArtistTag"
+            android:textSize="11sp"
+
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:id="@+id/albumReleaseYearTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" • Release Year: "
+            app:layout_constraintTop_toBottomOf="@id/albumTitle"
+            app:layout_constraintStart_toEndOf="@id/albumArtist"
+            android:textSize="11sp"
+
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:id="@+id/albumReleaseYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="2000"
+            android:text="@{Integer.toString(album.release_year)}"
+            app:layout_constraintTop_toBottomOf="@id/albumTitle"
+            app:layout_constraintStart_toEndOf="@id/albumReleaseYearTag"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/albumStockTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" • Stock: "
+            app:layout_constraintTop_toBottomOf="@id/albumTitle"
+            app:layout_constraintStart_toEndOf="@id/albumReleaseYear"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:id="@+id/albumStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:text="@{Integer.toString(album.stock_count)}"
+            app:layout_constraintTop_toBottomOf="@id/albumTitle"
+            app:layout_constraintStart_toEndOf="@id/albumStockTag"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/albumPic"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="4dp"
+            android:contentDescription="Album_pic"
+            android:src="@drawable/rnb_album_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/albumTitle" />
+
+        <TextView
+        android:id="@+id/albumInfoTag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:text="Album Info:"
+        android:textSize="11sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/albumPic"
+        app:layout_constraintTop_toBottomOf="@id/albumStock"
+        app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/albumInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:text="@{album.album_info}"
+            android:hint="I am Album info \nddhshdjhafhdsdhf"
+            android:textSize="11sp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/albumPic"
+            app:layout_constraintTop_toBottomOf="@id/albumInfoTag"
+            app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
